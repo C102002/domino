@@ -4,11 +4,14 @@ import { AppRouter } from './Router/AppRouter'
 import { DominoApp } from './DominoApp'
 import { AppTheme } from './theme/AppTheme'
 //import App from './App.tsx'
+import { UserProvider } from './contexts/UserProvider'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    {/* <AppTheme> */}
+    <UserProvider>
+      {/* <AppTheme> */}
       <DominoApp/>
-    {/* </AppTheme> */}
+      {/* </AppTheme> */}
+    </UserProvider>
   </React.StrictMode>,
 )
