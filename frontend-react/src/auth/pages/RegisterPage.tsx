@@ -1,7 +1,10 @@
 import React from 'react'
+import { AuthLayout, RegisterPageInfo } from '..'
 
 export const RegisterPage = () => {
   return (
-    <div>RegisterPage</div>
+    <>
+      <AuthLayout title='Registro' children={<RegisterPageInfo/>}/>
+    </>
   )
 }

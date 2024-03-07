@@ -6,6 +6,7 @@ createTheme
 export const MainTheme=createTheme({
 
     palette:{
+        mode:'light',
         primary:{
             main: '#1976d2',
             light: '#42a5f5',
@@ -13,7 +14,9 @@ export const MainTheme=createTheme({
             contrastText: '#ffff',
         },
         secondary:{
-            main:'#00004e'
+            main:'#3e3e3e',
+            light:'#666666',
+            dark:'8e8e8e8e',
         },
         error:{
             main:red.A400

@@ -1,0 +1,11 @@
+.box-shadow-img{
+    transition: 0.5s all ease-in-out;
+    overflow: hidden;
+    margin: 0 auto;
+
+}
+
+.box-shadow-img:hover{
+    transform: scale(1.01);
+    filter: blur(1px);
+}

@@ -9,9 +9,9 @@ import { UserProvider } from './contexts/UserProvider'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <UserProvider>
-      {/* <AppTheme> */}
-      <DominoApp/>
-      {/* </AppTheme> */}
+      <AppTheme>
+        <DominoApp/>
+      </AppTheme>
     </UserProvider>
   </React.StrictMode>,
 )

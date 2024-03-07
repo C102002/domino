@@ -1,12 +1,10 @@
-import React from 'react';
-import { Grid } from '@mui/material';
+import { AuthLayout } from '../Layout';
+import { LoginPageInfo } from '.';
 
 export const LoginPage = () => {
     return (
         <>
-          <Grid>
-            
-          </Grid>
+          <AuthLayout title='Login' children={<LoginPageInfo/>}/>
         </>
     )
 }
