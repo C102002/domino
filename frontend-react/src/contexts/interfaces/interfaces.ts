@@ -5,10 +5,13 @@ export interface props {
 }
 
 export interface UserState {
-    img: string;
-    username: string;
+    status: string,
+    photoURL: string|null;
+    displayName: string;
     email: string;
-    id: string;
+    uid: string;
+    errorMessage: null|string;
+    errorCode: null|string;
 }
 
 export interface UserContextInterface {

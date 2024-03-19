@@ -16,3 +16,12 @@ npm install react-hook-form
 
 Boostrap
 yarn add bootstrap@5.2.3
+
+Firebase
+yarn add firebase
+
+React Redux
+yarn add react-redux
+
+React Redux Toolkit
+yarn add @reduxjs/toolkit

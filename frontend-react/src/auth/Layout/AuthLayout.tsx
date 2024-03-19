@@ -4,7 +4,7 @@ import { props } from '.'
 import { useTheme } from '@emotion/react'
 import './AuthLayout.css'
 import { LockOutlined } from '@mui/icons-material'
-// import Background from '../../../Domino.jpg'
+import Background from '../../../public/Domino.jpg'
 
 //TODO: ponerlo con la imagen del proyecto y no la de internet
 
@@ -38,13 +38,22 @@ export const AuthLayout:React.FC<props> = ({children,title}) => {
                 height:{sm:525},
                 width:{sm:800},
                 backgroundColor:'common.white',
-                backgroundImage:`url(${BackgroundImage})`,
+                backgroundImage:`url(${Background})`,
                 padding:3,
                 borderRadius:2,
-            }}>
+            }}
+            // xs={{
+            //     height:{sm:525},
+            //     width:{sm:800},
+            //     backgroundColor:'common.white',
+            //     backgroundImage:`url(${BackgroundImage})`,
+            //     padding:3,
+            //     borderRadius:2,
+            // }}
+            >
             </Grid>
 
-            <Grid 
+            <Grid item
             className='box-shadow'
             alignContent='center'
             alignItems='center'
@@ -59,8 +68,9 @@ export const AuthLayout:React.FC<props> = ({children,title}) => {
                 <Grid container 
                 alignContent='center'
                 alignItems='center'
-                direction='row'
-                spacing={0.3}>
+                direction='column'
+                flexWrap='wrap'
+                >
                     <LockOutlined/>
                     <Typography variant='h5' align='center' sx={{mb:1}}>{title}</Typography>
                 </Grid>

@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { CreateGamePage, DominoPage, SearchGamePage } from '..'
 
 export const DominoRoute = () => {
+
   return (
     <Routes>
         <Route path='main' element={<DominoPage/>}/>

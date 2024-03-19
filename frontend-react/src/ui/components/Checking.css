@@ -1,0 +1,31 @@
+.loader{
+    overflow: hidden;
+    margin: 0 auto;
+    animation: Loader 2.0s linear infinite;
+}
+.loader::before{
+    width: 100%;
+    height: 100%;
+    background-color: linear-gradient(
+        0deg,
+        #f0c 0%,
+        #80f 100%
+    );
+}
+
+.loader::after,.loader::before{
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+}
+
+@keyframes Loader {
+    to{
+        transform: rotate(180deg);
+    }
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
