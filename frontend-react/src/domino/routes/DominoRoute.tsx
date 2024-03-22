@@ -6,9 +6,9 @@ export const DominoRoute = () => {
 
   return (
     <Routes>
-        <Route path='main' element={<DominoPage/>}/>
-        <Route path='search' element={<SearchGamePage/>}/>
-        <Route path='create' element={<CreateGamePage/>}/>
+        <Route path='game/main' element={<DominoPage/>}/>
+        <Route path='game/search' element={<SearchGamePage/>}/>
+        <Route path='game/create' element={<CreateGamePage/>}/>
     
         {/*Se manda por defecto al login*/}
         <Route path='/*' element={<Navigate to='/game/main'/>}/>  

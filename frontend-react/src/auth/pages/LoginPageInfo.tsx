@@ -2,7 +2,7 @@ import { Google } from '@mui/icons-material';
 import { Alert, Button, Grid, Link, TextField, Typography } from '@mui/material';
 import React, { useContext, useMemo } from 'react'
 import {Link as RouterLink} from 'react-router-dom'
-import { StartGoogleSignIn, checkingAuth } from '../helpers/thunks';
+import { StartGoogleSignIn, StartLoginWithEmailAndPassword, checkingAuth } from '../helpers/thunks';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { LoginFormInput } from './interfaces/interface';
 import { UserContext } from '../../contexts/UserContext';
@@ -19,6 +19,7 @@ export const LoginPageInfo = () => {
 
   const onSubmintHandler:SubmitHandler<LoginFormInput>=(data:LoginFormInput)=>{
     console.log(data);
+    StartLoginWithEmailAndPassword(user,setUser,data);
   }
 
   const onGoogleSignIn=()=>{

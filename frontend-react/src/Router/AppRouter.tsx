@@ -21,7 +21,7 @@ export const AppRouter = () => {
         { 
           (status==='not-authenticated')
           ? <Route path='/auth/*' element={<AuthRoute/>}/>
-          : <Route path='/game/*' element={<DominoRoute/>}/>
+          : <Route path='/*' element={<DominoRoute/>}/>
         }
         <Route path='/*' element={<Navigate to='/auth/login'/>}/>
       

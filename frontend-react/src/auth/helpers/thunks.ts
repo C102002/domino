@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
-import { logoutFirebase, registerUserWithEmailPassword, sigInWithGoogle } from "../../firebase/providers";
+import { loginWithEmailPassword, logoutFirebase, registerUserWithEmailPassword, sigInWithGoogle } from "../../firebase/providers";
 import { UserContextInterface, UserState } from "../../contexts/interfaces/interfaces";
-import { RegisterFormInput } from "../pages/interfaces/interface";
+import { LoginFormInput, RegisterFormInput } from "../pages/interfaces/interface";
 
 
 export const login=(setUser:Dispatch<SetStateAction<UserState>>,result:any)=>{    
@@ -56,6 +56,7 @@ export const ErrorAuth=(user:UserState,setUser:Dispatch<SetStateAction<UserState
 
 
 export const StartGoogleSignIn=async(user:UserState,setUser:Dispatch<SetStateAction<UserState>>)=>{
+    checkingAuth(user,setUser);
         try {
 
             console.log(user);
@@ -80,6 +81,7 @@ export const StartGoogleSignIn=async(user:UserState,setUser:Dispatch<SetStateAct
 }
 
 export const StartCreatingUserWithEmailAndPassword=async(user:UserState,setUser:Dispatch<SetStateAction<UserState>>,data:RegisterFormInput)=>{
+    checkingAuth(user,setUser);
     try{
         const result = await registerUserWithEmailPassword(data);
 
@@ -87,11 +89,26 @@ export const StartCreatingUserWithEmailAndPassword=async(user:UserState,setUser:
 
         
         if(!result.ok) ErrorAuth(user,setUser,result);
-
-        login(setUser,result);
+        else login(setUser,result);
 
     }
     catch(error){
         console.log(error);   
+    }
+}
+
+export const StartLoginWithEmailAndPassword=async(user:UserState,setUser:Dispatch<SetStateAction<UserState>>,data:LoginFormInput)=>{
+    console.log(JSON.stringify(data));
+    checkingAuth(user,setUser);
+    try{
+        const result= await loginWithEmailPassword(data);
+        console.log(JSON.stringify(result));
+
+        if(!result.ok) ErrorAuth(user,setUser,result);
+        else login(setUser,result);
+
+    }
+    catch(error){
+        console.log(error);
     }
 }
